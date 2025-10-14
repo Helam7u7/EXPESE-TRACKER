@@ -1,0 +1,27 @@
+.container_expeseItem {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 1.5rem;
+  border-bottom: solid 3px #1E293B;
+  transition: .4s background-color ease-in;
+  cursor: pointer;
+}
+.container_expeseItem:hover {
+  background-color: #102D4A;
+}
+
+.expense_icon svg {
+  height: 50px;
+  width: 50px;
+}
+
+.expense_icon {
+  background-color: #1E293B;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}

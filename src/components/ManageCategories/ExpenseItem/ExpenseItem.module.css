@@ -1,0 +1,20 @@
+.container_expeseItem {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.expense_icon svg {
+  height: 50px;
+  width: 50px;
+}
+
+.expense_icon {
+  background-color: #1E293B;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
