@@ -8,12 +8,12 @@ import Sport from "../../IconsSvg/Sport";
 import Streaming from "../../IconsSvg/Streaming";
 import Study from "../../IconsSvg/Study";
 
-const ExpenseItem = ({ type }) => {
+const ExpenseItem = ({ type, classIcon }) => {
   const iconMap = {
     transportation: <CarIcon />,
     food: <FoodIcon />,
     game: <Game />,
-    pet: <Pet />,
+    pet: <Pet classIcon={classIcon} />,
     relation: <Relation />,
     shopping: <Shopping />,
     sport: <Sport />,

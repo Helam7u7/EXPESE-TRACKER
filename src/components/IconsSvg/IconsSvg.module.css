@@ -25,3 +25,11 @@
   display: flex;
   align-items: center;
 }
+
+.iconModal {
+  background-color: red;
+}
+
+.iconItem {
+  background-color: blue;
+}

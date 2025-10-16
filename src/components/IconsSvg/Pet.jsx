@@ -1,8 +1,16 @@
 import styles from "./IconsSvg.module.css";
 
-const Pet = () => {
+const Pet = ({ classIcon }) => {
+  let iconClass = styles.container_expeseItem;
+  if (classIcon === "iconModal") {
+    iconClass = styles.iconModal;
+  } else {
+    iconClass = styles.container_expeseItem;
+  }
+
   return (
-    <div className={styles.container_expeseItem}>
+    // <div className={styles.container_expeseItem}>
+    <div className={iconClass}>
       <div className={styles.expense_icon}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path

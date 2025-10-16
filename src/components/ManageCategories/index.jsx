@@ -9,7 +9,10 @@ const ManageCategories = () => {
     <main className={styles.containerCategories}>
       <div className={styles.navCategories}>
         <h1>Manage Categories</h1>
-        <div className={styles.btnAddCategory}>
+        <div
+          onClick={() => setModalOpen(true)}
+          className={styles.btnAddCategory}
+        >
           <div className={styles.iconAddCategory}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
               <path
@@ -18,7 +21,7 @@ const ManageCategories = () => {
               />
             </svg>
           </div>
-          <button onClick={() => setModalOpen(true)}>New Category</button>
+          <button>New Category</button>
         </div>
       </div>
       <div className={styles.expense_container}>
