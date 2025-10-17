@@ -1,8 +1,10 @@
+import { getIconClass } from "../../utils/GetIconClass";
 import styles from "./IconsSvg.module.css";
 
-const FoodIcon = () => {
+const FoodIcon = ({ classIcon }) => {
+  const iconClass = getIconClass(classIcon);
   return (
-    <div className={styles.container_expeseItem}>
+    <div className={iconClass}>
       <div className={styles.expense_icon}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
           <path

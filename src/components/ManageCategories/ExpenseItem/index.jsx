@@ -10,15 +10,15 @@ import Study from "../../IconsSvg/Study";
 
 const ExpenseItem = ({ type, classIcon }) => {
   const iconMap = {
-    transportation: <CarIcon />,
-    food: <FoodIcon />,
-    game: <Game />,
+    transportation: <CarIcon classIcon={classIcon} />,
+    food: <FoodIcon classIcon={classIcon} />,
+    game: <Game classIcon={classIcon} />,
     pet: <Pet classIcon={classIcon} />,
-    relation: <Relation />,
-    shopping: <Shopping />,
-    sport: <Sport />,
-    streaming: <Streaming />,
-    study: <Study />,
+    relation: <Relation classIcon={classIcon} />,
+    shopping: <Shopping classIcon={classIcon} />,
+    sport: <Sport classIcon={classIcon} />,
+    streaming: <Streaming classIcon={classIcon} />,
+    study: <Study classIcon={classIcon} />,
   };
   return <>{iconMap[type]}</>;
 };
