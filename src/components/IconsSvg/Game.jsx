@@ -1,4 +1,4 @@
-import { getIconClass } from "../../utils/GetIconClass";
+import { getIconClass } from "../../utils/getIconClass";
 import styles from "./IconsSvg.module.css";
 
 const Game = ({ classIcon }) => {
