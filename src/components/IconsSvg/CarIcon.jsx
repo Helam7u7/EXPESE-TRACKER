@@ -1,5 +1,5 @@
 import styles from "./IconsSvg.module.css";
-import { getIconClass } from "../../utils/GetIconClass";
+import { getIconClass } from "../../utils/getIconClass";
 
 const CarIcon = ({ classIcon }) => {
   const iconClass = getIconClass(classIcon);
