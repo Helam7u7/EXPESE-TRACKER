@@ -8,19 +8,25 @@ import Sport from "../../IconsSvg/Sport";
 import Streaming from "../../IconsSvg/Streaming";
 import Study from "../../IconsSvg/Study";
 
-const ExpenseItem = ({ type, classIcon }) => {
-  const iconMap = {
-    transportation: <CarIcon classIcon={classIcon} />,
-    food: <FoodIcon classIcon={classIcon} />,
-    game: <Game classIcon={classIcon} />,
-    pet: <Pet classIcon={classIcon} />,
-    relation: <Relation classIcon={classIcon} />,
-    shopping: <Shopping classIcon={classIcon} />,
-    sport: <Sport classIcon={classIcon} />,
-    streaming: <Streaming classIcon={classIcon} />,
-    study: <Study classIcon={classIcon} />,
-  };
-  return <>{iconMap[type]}</>;
+const ExpenseItem = ({ classIcon }) => {
+  const iconMap = [
+    CarIcon,
+    FoodIcon,
+    Game,
+    Pet,
+    Relation,
+    Shopping,
+    Sport,
+    Streaming,
+    Study,
+  ];
+  return (
+    <>
+      {iconMap.map((IconComponents, index) => (
+        <IconComponents key={index} id={`id-${index}`} classIcon={classIcon} />
+      ))}
+    </>
+  );
 };
 
 export default ExpenseItem;

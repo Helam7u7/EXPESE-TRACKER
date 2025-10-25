@@ -1,10 +1,10 @@
 import { getIconClass } from "../../utils/getIconClass";
 import styles from "./IconsSvg.module.css";
 
-const Relation = ({ classIcon }) => {
+const Relation = ({ key, id, classIcon }) => {
   const iconClass = getIconClass(classIcon);
   return (
-    <div className={iconClass}>
+    <div key={key} id={id} className={iconClass}>
       <div className={styles.expense_icon}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path
@@ -13,7 +13,7 @@ const Relation = ({ classIcon }) => {
           />
         </svg>
       </div>
-      <p>Relation</p>
+      {/* <p></p> */}
     </div>
   );
 };

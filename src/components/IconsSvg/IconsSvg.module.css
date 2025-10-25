@@ -5,6 +5,13 @@
   gap: 1rem;
   margin: 1rem;
 }
+.iconModal .expense_icon {
+  transition: .2s background-color ease-in;
+  cursor: pointer;
+}
+.iconModal .expense_icon:hover{
+  background-color: #18416a;
+}
 
 .container_expeseItem {
   display: flex;
@@ -24,6 +31,10 @@
 .expense_icon svg {
   height: 50px;
   width: 50px;
+  /* border: 1px solid red; */
+}
+.expense_icon svg path{
+  height: fit-content;
 }
 
 .expense_icon {

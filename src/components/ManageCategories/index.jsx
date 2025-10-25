@@ -27,8 +27,7 @@ const ManageCategories = () => {
       <div className={styles.expense_container}>
         <h2>Expenses</h2>
         <div className={styles.containerExpenseItems}>
-          <ExpenseItem type="pet" />
-          <ExpenseItem type="relation" />
+          <ExpenseItem />
         </div>
       </div>
       <AddCategory isOpen={isModalOpen} onClose={() => setModalOpen(false)} />

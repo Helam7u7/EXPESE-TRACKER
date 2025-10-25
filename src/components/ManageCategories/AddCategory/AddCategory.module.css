@@ -13,3 +13,10 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.title h2 {
+  font-size: 3rem;
+}
+.title h3 {
+  font-size: 2rem;
+}
