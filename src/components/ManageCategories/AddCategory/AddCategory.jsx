@@ -1,8 +1,9 @@
 import ExpenseItem from "../ExpenseItem";
 import style from "./AddCategory.module.css";
 
-const AddCategory = ({ isOpen, onClose }) => {
+const AddCategory = ({ isOpen, onClose, iconList, setIconList }) => {
   if (!isOpen) return null;
+
   return (
     <div className={style.size}>
       <div className={style.title}>
@@ -12,7 +13,11 @@ const AddCategory = ({ isOpen, onClose }) => {
       </div>
       <h3>Choose an Icon</h3>
       <div className={style.iconsContainer}>
-        <ExpenseItem classIcon="iconModal" />
+        <ExpenseItem
+          classIcon="iconModal"
+          setIconList={setIconList}
+          iconList={iconList}
+        />
       </div>
       <div className="btns_container">
         <div className="btn_cancel" onClick={onClose}>

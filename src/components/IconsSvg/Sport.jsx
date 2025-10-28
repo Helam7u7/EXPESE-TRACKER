@@ -1,10 +1,17 @@
 import { getIconClass } from "../../utils/getIconClass";
 import styles from "./IconsSvg.module.css";
+import { getIconElement } from "../../utils/getIconElement";
 
-const Sport = ({ key, id, classIcon }) => {
+const Sport = ({ key, id, classIcon, name, iconList, setIconList }) => {
   const iconClass = getIconClass(classIcon);
+
   return (
-    <div key={key} id={id} className={iconClass}>
+    <div
+      key={key}
+      id={id}
+      className={iconClass}
+      onClick={(e) => getIconElement(e, setIconList, iconList)}
+    >
       <div className={styles.expense_icon}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
           <path
@@ -13,7 +20,7 @@ const Sport = ({ key, id, classIcon }) => {
           />
         </svg>
       </div>
-      {/* <p></p> */}
+      {name?.trim() ? <p>{name}</p> : null}
     </div>
   );
 };

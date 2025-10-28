@@ -8,7 +8,7 @@ import Sport from "../../IconsSvg/Sport";
 import Streaming from "../../IconsSvg/Streaming";
 import Study from "../../IconsSvg/Study";
 
-const ExpenseItem = ({ classIcon }) => {
+const ExpenseItem = ({ classIcon, name, iconList, setIconList }) => {
   const iconMap = [
     CarIcon,
     FoodIcon,
@@ -23,7 +23,14 @@ const ExpenseItem = ({ classIcon }) => {
   return (
     <>
       {iconMap.map((IconComponents, index) => (
-        <IconComponents key={index} id={`id-${index}`} classIcon={classIcon} />
+        <IconComponents
+          key={index}
+          id={`id-${index}`}
+          classIcon={classIcon}
+          name={name}
+          iconList={iconList}
+          setIconList={setIconList}
+        />
       ))}
     </>
   );

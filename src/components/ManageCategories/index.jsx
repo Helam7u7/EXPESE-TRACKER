@@ -5,6 +5,8 @@ import styles from "./ManageCategories.module.css";
 
 const ManageCategories = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [iconList, setIconList] = useState([]);
+
   return (
     <main className={styles.containerCategories}>
       <div className={styles.navCategories}>
@@ -26,11 +28,14 @@ const ManageCategories = () => {
       </div>
       <div className={styles.expense_container}>
         <h2>Expenses</h2>
-        <div className={styles.containerExpenseItems}>
-          <ExpenseItem />
-        </div>
+        <div className={styles.containerExpenseItems}>{}</div>
       </div>
-      <AddCategory isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+      <AddCategory
+        isOpen={isModalOpen}
+        onClose={() => setModalOpen(false)}
+        iconList={iconList}
+        setIconList={setIconList}
+      />
     </main>
   );
 };
