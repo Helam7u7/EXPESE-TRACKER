@@ -1,5 +1,3 @@
-export const getIconElement = (e, setIconList, iconList) => {
-  const clickedIcon = e.currentTarget;
-  setIconList(clickedIcon);
-  console.log(iconList);
+export const getIconElement = (e, setSelectedIcon, id) => {
+  setSelectedIcon(id);
 };

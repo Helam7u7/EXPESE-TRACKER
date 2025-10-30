@@ -1,17 +1,10 @@
 import { getIconClass } from "../../utils/getIconClass";
 import styles from "./IconsSvg.module.css";
-import { getIconElement } from "../../utils/getIconElement";
 
-const CarIcon = ({ key, id, classIcon, name, iconList, setIconList }) => {
-  const iconClass = getIconClass(classIcon);
-
+const CarIcon = ({ key, id, classIcon, name, selectedIcon, onClick }) => {
+  const iconClass = getIconClass(classIcon, selectedIcon, id);
   return (
-    <div
-      key={key}
-      id={id}
-      className={iconClass}
-      onClick={(e) => getIconElement(e, setIconList, iconList)}
-    >
+    <div key={key} id={id} className={iconClass} onClick={onClick}>
       <div className={styles.expense_icon}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path
