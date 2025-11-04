@@ -8,6 +8,8 @@ const AddCategory = ({
   selectedIcon,
   setSelectedIcon,
   setNewCategory,
+  listCategories,
+  setListCategories,
 }) => {
   const [categoryName, setCategoryName] = useState("");
   if (!isOpen) return null;
@@ -19,6 +21,9 @@ const AddCategory = ({
       name: categoryName,
       iconId: selectedIcon,
     });
+
+    setListCategories((prev) => [...prev, setNewCategory]);
+
     setCategoryName("");
     onClose();
   };

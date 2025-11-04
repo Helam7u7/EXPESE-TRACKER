@@ -7,15 +7,18 @@ const ManageCategories = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedIcon, setSelectedIcon] = useState(null);
   const [newCategory, setNewCategory] = useState({ name: "", iconId: "" });
+  const [listCategories, setListCategories] = useState([]);
+
+  const handleNewCategoryBtn = () => {
+    setModalOpen(true);
+    setSelectedIcon(null);
+  };
 
   return (
     <main className={styles.containerCategories}>
       <div className={styles.navCategories}>
         <h1>Manage Categories</h1>
-        <div
-          onClick={() => setModalOpen(true)}
-          className={styles.btnAddCategory}
-        >
+        <div onClick={handleNewCategoryBtn} className={styles.btnAddCategory}>
           <div className={styles.iconAddCategory}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
               <path
@@ -31,8 +34,11 @@ const ManageCategories = () => {
         <h2>Expenses</h2>
         <div className={styles.containerExpenseItems}>{}</div>
         <div>
-          <p>{newCategory.iconId}</p>
-          <p>{newCategory.name}</p>
+          {/* <p>{newCategory.iconId}</p>
+          <p>{newCategory.name}</p> */}
+          {listCategories.map((cat, index) => (
+            <p>{cat.name}</p>
+          ))}
         </div>
       </div>
       <AddCategory
@@ -41,6 +47,8 @@ const ManageCategories = () => {
         selectedIcon={selectedIcon}
         setSelectedIcon={setSelectedIcon}
         setNewCategory={setNewCategory}
+        listCategories={listCategories}
+        setListCategories={setListCategories}
       />
     </main>
   );
