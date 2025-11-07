@@ -6,13 +6,13 @@ import styles from "./ManageCategories.module.css";
 const ManageCategories = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedIcon, setSelectedIcon] = useState(null);
-  const [newCategory, setNewCategory] = useState({ name: "", iconId: "" });
   const [listCategories, setListCategories] = useState([]);
 
   const handleNewCategoryBtn = () => {
     setModalOpen(true);
     setSelectedIcon(null);
   };
+  console.log("lista desde mana", listCategories);
 
   return (
     <main className={styles.containerCategories}>
@@ -33,22 +33,15 @@ const ManageCategories = () => {
       <div className={styles.expense_container}>
         <h2>Expenses</h2>
         <div className={styles.containerExpenseItems}>{}</div>
-        <div>
-          {/* <p>{newCategory.iconId}</p>
-          <p>{newCategory.name}</p> */}
-          {listCategories.map((cat, index) => (
-            <p>{cat.name}</p>
-          ))}
-        </div>
+        <ExpenseItem listCategories={listCategories} />
       </div>
       <AddCategory
         isOpen={isModalOpen}
         onClose={() => setModalOpen(false)}
         selectedIcon={selectedIcon}
         setSelectedIcon={setSelectedIcon}
-        setNewCategory={setNewCategory}
-        listCategories={listCategories}
         setListCategories={setListCategories}
+        listCategories={listCategories}
       />
     </main>
   );

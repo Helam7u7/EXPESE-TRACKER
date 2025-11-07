@@ -5,8 +5,8 @@ export const getIconClass = (classIcon, selectedIcon, id) => {
     classIcon === "iconModal" ? styles.iconModal : styles.container_expeseItem;
 
   const isSelected = id === selectedIcon;
-  console.log(id);
-  console.log(selectedIcon);
+  // console.log(id);
+  // console.log(selectedIcon);
 
   return `${baseClass} ${isSelected ? styles.selected : ""}`.trim();
 };

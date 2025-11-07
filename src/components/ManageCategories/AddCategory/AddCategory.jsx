@@ -7,66 +7,74 @@ const AddCategory = ({
   onClose,
   selectedIcon,
   setSelectedIcon,
-  setNewCategory,
-  listCategories,
   setListCategories,
 }) => {
   const [categoryName, setCategoryName] = useState("");
+  const [handleIcon, setHandleIcon] = useState(false);
+  const newCategory = { name: "", iconId: "" };
   if (!isOpen) return null;
 
-  const handleAddCategory = () => {
-    if (!categoryName || !selectedIcon) return;
+  const handleAddCategory = (e) => {
+    e.preventDefault();
+    if (!categoryName || !selectedIcon) {
+      setHandleIcon(true);
+      return;
+    }
 
-    setNewCategory({
-      name: categoryName,
-      iconId: selectedIcon,
-    });
+    newCategory.name = categoryName.trim();
+    newCategory.iconId = selectedIcon;
 
-    setListCategories((prev) => [...prev, setNewCategory]);
-
+    setListCategories((prev) => [...prev, newCategory]);
     setCategoryName("");
     onClose();
+    setHandleIcon(false);
   };
 
   return (
     <div className={style.size}>
       <div className={style.sizeContent}>
-        <div className={style.title}>
-          <h2>Add Category</h2>
-          <h3>Category Name</h3>
-          <input
-            className={style.inputName}
-            type="text"
-            placeholder="E.g. Groceries"
-            spellCheck={false}
-            value={categoryName}
-            onChange={(e) => setCategoryName(e.target.value)}
-          />
-        </div>
-        <div className={style.title}>
-          <h3>Choose an Icon</h3>
-        </div>
-        <div className={style.iconsContainer}>
-          <ExpenseItem
-            classIcon="iconModal"
-            selectedIcon={selectedIcon}
-            setSelectedIcon={setSelectedIcon}
-          />
-        </div>
-        <div className={style.btnsContainer}>
-          <button
-            className={`${style.btnBase} ${style.btnCancel}`}
-            onClick={onClose}
-          >
-            Cancelar
-          </button>
-          <button
-            className={`${style.btnBase} ${style.btnAdd}`}
-            onClick={handleAddCategory}
-          >
-            Add Category
-          </button>
-        </div>
+        <form onSubmit={handleAddCategory}>
+          <div className={style.title}>
+            <h2>Add Category</h2>
+            <h3>Category Name</h3>
+            <input
+              className={style.inputName}
+              type="text"
+              placeholder="E.g. Groceries"
+              required
+              spellCheck={false}
+              value={categoryName}
+              onChange={(e) => setCategoryName(e.target.value)}
+            />
+          </div>
+          <div className={style.title}>
+            <h3>Choose an Icon</h3>
+          </div>
+          <div className={style.iconsContainer}>
+            <ExpenseItem
+              classIcon="iconModal"
+              selectedIcon={selectedIcon}
+              setSelectedIcon={setSelectedIcon}
+            />
+          </div>
+          {handleIcon ? (
+            <div className={style.alertIcon}>Escoge algún ícono</div>
+          ) : null}
+          <div className={style.btnsContainer}>
+            <button
+              className={`${style.btnBase} ${style.btnCancel}`}
+              onClick={onClose}
+            >
+              Cancelar
+            </button>
+            <button
+              className={`${style.btnBase} ${style.btnAdd}`}
+              type="submit"
+            >
+              Add Category
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

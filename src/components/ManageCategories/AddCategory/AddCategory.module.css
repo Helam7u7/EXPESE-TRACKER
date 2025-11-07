@@ -73,3 +73,16 @@
 .btnAdd:hover {
   background-color: #102D4A;
 }
+
+.alertIcon {
+  display: flex;
+  color: #d3cece;
+  font-weight: 600;
+  background-color: rgb(196, 22, 22);
+  width: 180px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin-top: 2rem;
+}

@@ -9,7 +9,13 @@ import Sport from "../../IconsSvg/Sport";
 import Streaming from "../../IconsSvg/Streaming";
 import Study from "../../IconsSvg/Study";
 
-const ExpenseItem = ({ classIcon, name, selectedIcon, setSelectedIcon }) => {
+const ExpenseItem = ({
+  classIcon,
+  name,
+  selectedIcon,
+  setSelectedIcon,
+  listCategories,
+}) => {
   const iconMap = [
     CarIcon,
     FoodIcon,
@@ -21,12 +27,38 @@ const ExpenseItem = ({ classIcon, name, selectedIcon, setSelectedIcon }) => {
     Streaming,
     Study,
   ];
+  if (listCategories) {
+    return (
+      <>
+        {listCategories.map((cat, index) => {
+          const iconIndex = parseInt(cat.iconId.split("-")[1], 10);
+          const idCategory = `${cat.name.replace(/\s+/g, "-").toLowerCase()}-${
+            cat.iconId
+          }`;
+          const IconComponent = iconMap[iconIndex];
+          if (!IconComponent) return null;
+
+          return (
+            <IconComponent
+              key={index}
+              id={idCategory}
+              classIcon={classIcon}
+              name={cat.name}
+              isSelected={true}
+            />
+          );
+        })}
+      </>
+    );
+  }
+
+  // Si no hay listCategories, renderizar todos los íconos para selección
   return (
     <>
-      {iconMap.map((IconComponents, index) => {
+      {iconMap.map((IconComponent, index) => {
         const iconId = `id-${index}`;
         return (
-          <IconComponents
+          <IconComponent
             key={index}
             id={iconId}
             classIcon={classIcon}
