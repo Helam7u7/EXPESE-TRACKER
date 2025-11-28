@@ -30,6 +30,13 @@ const AddCategory = ({
     setHandleIcon(false);
   };
 
+  const handleCancelBtn = (e) => {
+    e.preventDefault();
+    setCategoryName("");
+    setHandleIcon(false);
+    onClose();
+  };
+
   return (
     <div className={style.size}>
       <div className={style.sizeContent}>
@@ -63,7 +70,7 @@ const AddCategory = ({
           <div className={style.btnsContainer}>
             <button
               className={`${style.btnBase} ${style.btnCancel}`}
-              onClick={onClose}
+              onClick={handleCancelBtn}
             >
               Cancelar
             </button>
